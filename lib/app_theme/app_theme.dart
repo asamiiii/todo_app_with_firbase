@@ -21,7 +21,17 @@ ThemeData themeData=ThemeData(
           ),
         ),
         scaffoldBackgroundColor: const Color(0xFFDFECDB),
+        bottomSheetTheme: BottomSheetThemeData(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(20),
+              topRight: Radius.circular(20),
+            )
+          )
+        ),
         textTheme: TextTheme(
           headline1: TextStyle(fontSize:20,color:blueMainColor,fontWeight: FontWeight.bold)
-        )
+        ),
+
+
       );
