@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
  Color blueMainColor = const Color(0xff5D9CEC);
  Color whiteMainColor =  Colors.white;
+ Color GreenDoneColor = Colors.green;
 
 
 ThemeData themeData=ThemeData(

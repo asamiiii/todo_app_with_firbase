@@ -1,15 +1,30 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'firebase_options.dart';
+import 'package:provider/provider.dart';
+import 'package:todo_app_with_firbase/data_model/task_model.dart';
+import 'package:todo_app_with_firbase/network/remote/firebase_oprations.dart';
+import 'package:todo_app_with_firbase/provider/appProvider.dart';
 import 'package:flutter/material.dart';
 import 'package:todo_app_with_firbase/home_layout/layout_widgets.dart';
+import 'package:todo_app_with_firbase/home_layout/home_layout.dart';
 import 'app_theme/app_theme.dart';
+import 'firebase_options.dart';
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized;
+void main()  async{
+  WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
+   options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(const MyApp());
+  
+  MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => AppProvider()),
+      ],
+      child: MyApp(),
+    );
+
+    runApp(MyApp());
+
 }
 
 class MyApp extends StatelessWidget {
@@ -18,43 +33,14 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return ChangeNotifierProvider(
+      create: (context) => AppProvider(),
+      child:Consumer<AppProvider> (
+        builder: (context, value, child) => 
+    MaterialApp(
       theme: themeData,
-      home: const MyHomePage(),
-    );
+      home: HomeLayout(),
+    )));
   }
 }
 
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Scaffold(
-          extendBody: true,
-        appBar:PreferredSize(
-          preferredSize: const Size.fromHeight(150),
-          child: MainAppBar() ),
-          body: ListView.separated(
-            padding: EdgeInsets.only(top: 60,left: 20,right: 20,bottom:80 ),
-            itemBuilder: (context, index)=>TaskItem(),
-            itemCount:5,
-            separatorBuilder: (context, index) {
-              return SizedBox(height: 20,);
-            },
-            
-          ),
-          bottomNavigationBar: BottomNavBar(),
-          floatingActionButton:FloatingAction() ,
-          floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-          ),
-
-        Calender(),
-
-      ]
-      
-    );
-  }
-}

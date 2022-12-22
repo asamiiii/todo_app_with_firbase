@@ -134,6 +134,12 @@
       "languageVersion": "2.18"
     },
     {
+      "name": "flutter_slidable",
+      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_slidable-2.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
       "name": "flutter_test",
       "rootUri": "file:///C:/src/flutter/packages/flutter_test",
       "packageUri": "lib/",
@@ -188,6 +194,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "nested",
+      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/nested-1.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "path",
       "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/path-1.8.2",
       "packageUri": "lib/",
@@ -208,6 +220,12 @@
     {
       "name": "pointycastle",
       "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/pointycastle-3.6.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "provider",
+      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/provider-6.0.4",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -290,7 +308,7 @@
       "languageVersion": "2.18"
     }
   ],
-  "generated": "2022-12-12T20:18:58.364942Z",
+  "generated": "2022-12-21T08:22:27.160423Z",
   "generator": "pub",
   "generatorVersion": "2.18.5"
 }
