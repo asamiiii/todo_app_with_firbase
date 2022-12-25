@@ -6,6 +6,7 @@ class AppProvider extends ChangeNotifier{
   int currentIndex = 0;
   String dropValue = 'English';
   String dropModeValue = 'Dark';
+ 
 
   toggleNavBar(int index){
      currentIndex = index;
@@ -31,13 +32,18 @@ class AppProvider extends ChangeNotifier{
                   firstDate: DateTime.now(),
                   lastDate: DateTime.now().add(Duration(days: 365)));
 
-                  if(selectedDate==null){return;}
+                  if(selectedDate==null){
+
+                    return;
+                    //print('-------- Date : $selectedDatee');
+                    }
                   else{
                     
                     selectedDatee=selectedDate;
                     notifyListeners();
+                    
                   }
-                  print(selectedDate);
+                 print('-------- Date : $selectedDatee');
                   
               }
 

@@ -91,6 +91,7 @@ class Calender extends StatelessWidget {
             selectionColor: Colors.black,
             selectedTextColor: Colors.white,
             onDateChange: (date) {
+              
               myProvider.getTaskByDate(date);
             },
             

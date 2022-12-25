@@ -1,11 +1,7 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
-import 'package:todo_app_with_firbase/data_model/task_model.dart';
-import 'package:todo_app_with_firbase/network/remote/firebase_oprations.dart';
 import 'package:todo_app_with_firbase/provider/appProvider.dart';
 import 'package:flutter/material.dart';
-import 'package:todo_app_with_firbase/home_layout/layout_widgets.dart';
 import 'package:todo_app_with_firbase/home_layout/home_layout.dart';
 import 'app_theme/app_theme.dart';
 import 'firebase_options.dart';
