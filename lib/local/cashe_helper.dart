@@ -29,5 +29,17 @@ class CasheHelper {
       return sharedPreferences!.getBool(key);
    }
 
+
+    static Future<bool> putIsLangaugeValue(String key,bool language)async
+       {
+       return  await sharedPreferences!.setBool(key, language);
+       } 
+
+   static bool? getLangaugeValue(String key) {
+      return sharedPreferences!.getBool(key);
+   }
+
+    
+
 }
 

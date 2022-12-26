@@ -1,0 +1,18 @@
+{
+    "toDoList": "ToDo List",
+    "settings": "Settings",
+    "language": "Languages",
+    "mode":"Mode",
+    "addNewTask": "Add New Task",
+    "selectTime": "Select Time",
+    "title": "Title",
+    "discribtion": "Discribtion",
+    "delete": "Delete",
+    "edite": "Edite",
+    "updateTask": "Update Task",
+    "addTask": "Add Task",
+    "done": "Done !!",
+    "noTasksToday": "No Tasks Today , Bro ..zzZZZzzZ",
+    "loading": "Loading .."
+
+}

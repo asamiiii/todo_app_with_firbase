@@ -16,14 +16,15 @@ class DropLangMenu extends StatelessWidget {
             isDense: true,
             isExpanded: true,
             focusColor:Colors.transparent ,
-        value: myProvider.dropValue,
+        value: myProvider.isArabic==true ? 'Arabic' : 'English' ,
         icon: const Icon(Icons.arrow_downward),
         //elevation: 16,
         style: const TextStyle(color: Colors.deepPurple),
         
         onChanged: (String? value) {
           myProvider.toggleDropMenu(value!);
-          //print(dropValue);
+          myProvider.changeLanguage(value);
+          CasheHelper.putIsLangaugeValue('langauge', myProvider.isArabic!);
         },
         items: [
           DropdownMenuItem(

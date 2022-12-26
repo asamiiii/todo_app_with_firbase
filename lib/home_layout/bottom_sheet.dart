@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../app_theme/app_theme.dart';
 import '../data_model/task_model.dart';
 import '../network/remote/firebase_oprations.dart';
@@ -13,7 +13,7 @@ Future showBottomSheetTask(BuildContext context, var myProvider,
   final formKey = GlobalKey<FormState>();
 
   if (task != null) {
-    taskTitle = TextEditingController(text: task.task);
+    taskTitle = TextEditingController(text: task.task,);
     taskDescription = TextEditingController(text: task.discribtion);
   } else {
     taskTitle = TextEditingController();
@@ -34,7 +34,7 @@ Future showBottomSheetTask(BuildContext context, var myProvider,
           children: [
             Center(
                 child: Text(
-              task == null ? 'Add new task' : 'Update task',
+              task == null ? AppLocalizations.of(context).addNewTask: AppLocalizations.of(context).updateTask,
               style: Theme.of(context).textTheme.headline1,
             )),
             Form(
@@ -51,13 +51,14 @@ Future showBottomSheetTask(BuildContext context, var myProvider,
                       },
                       controller: taskTitle,
                       decoration: InputDecoration(
-                          hintText: 'title',
-                          labelText: 'title',
+                          hintText: AppLocalizations.of(context).title,
+                          labelText: AppLocalizations.of(context).title,
                           labelStyle:TextStyle(
                             color: myProvider.isDark ?whiteMainColor: blackMainColor
                           ),
                           //labelStyle: 
                           ),
+                          style:TextStyle(color:myProvider.isDark ? whiteMainColor : blackMainColor )
                     ),
                     TextFormField(
                       validator: (taskDescription) {
@@ -70,12 +71,13 @@ Future showBottomSheetTask(BuildContext context, var myProvider,
                       controller: taskDescription,
                       maxLines: 4,
                       decoration: InputDecoration(
-                          hintText: 'discription',
-                          labelText: 'discription',
+                          hintText: AppLocalizations.of(context).discribtion,
+                          labelText: AppLocalizations.of(context).discribtion,
                           labelStyle:TextStyle(
                             color:  myProvider.isDark ? whiteMainColor :blackMainColor
                           ),
                           alignLabelWithHint: true),
+                          style:TextStyle(color:myProvider.isDark ? whiteMainColor : blackMainColor ),
                     ),
                   ],
                 )),
@@ -83,7 +85,7 @@ Future showBottomSheetTask(BuildContext context, var myProvider,
               height: 20,
             ),
             Text(
-              'Select Time',
+              AppLocalizations.of(context).selectTime,
               style: Theme.of(context).textTheme.headline1,
             ),
             InkWell(
@@ -102,7 +104,7 @@ Future showBottomSheetTask(BuildContext context, var myProvider,
             ElevatedButton(
                 onPressed: () {
                   if (formKey.currentState!.validate()) {
-                    showLoading(context, 'Loading ... ');
+                    showLoading(context, AppLocalizations.of(context).loading);  // add to localization
                     if (id == null) {
                       addTaskToFirebase(
                         TaskModel(
@@ -128,7 +130,7 @@ Future showBottomSheetTask(BuildContext context, var myProvider,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    id == null ? Text('Add Task') : Text('Update Task'),
+                    id == null ? Text(AppLocalizations.of(context).addTask) : Text(AppLocalizations.of(context).updateTask),
                     SizedBox(
                       width: 5,
                     ),

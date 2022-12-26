@@ -5,6 +5,7 @@ import '../data_model/task_model.dart';
 import '../home_layout/layout_widgets.dart';
 import '../network/remote/firebase_oprations.dart';
 import '../provider/appProvider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class TasksScreen extends StatelessWidget {
   const TasksScreen({super.key});
@@ -36,7 +37,7 @@ class TasksScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Image.asset('assets/images/boy.png',height: 150,width: 150,),
-                      Text('No Tasks Today , Bro  .. zzzZZ')
+                      Text(AppLocalizations.of(context).noTasksToday,style:Theme.of(context).textTheme.headline3,)
                     ],
                   ));
                 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:todo_app_with_firbase/app_theme/app_theme.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:todo_app_with_firbase/provider/appProvider.dart';
 import 'package:todo_app_with_firbase/screens/settings_screen/widgets.dart';
 
@@ -17,11 +17,11 @@ class SettingsScreen extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('Language',style:Theme.of(context).textTheme.headline2,),
+          Text(AppLocalizations.of(context).language,style:Theme.of(context).textTheme.headline2,),
           SizedBox(height: 20,),
           DropLangMenu(),
           SizedBox(height: 20,),
-          Text('Mode',style:Theme.of(context).textTheme.headline2),
+          Text(AppLocalizations.of(context).mode,style:Theme.of(context).textTheme.headline2),
           SizedBox(height: 20,),
           DropMenuMode(),
       

@@ -9,6 +9,7 @@ import 'package:todo_app_with_firbase/screens/settings_screen/settings_screen.da
 import '../app_theme/app_theme.dart';
 import '../screens/tasks_screen.dart';
 import 'bottom_sheet.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 List<Widget> screens = [TasksScreen(),SettingsScreen()];
 
@@ -121,7 +122,7 @@ class MainAppBar extends StatelessWidget {
             title: Container(
               padding: const EdgeInsets.all(10),
               child:Text(
-                myProvider.currentIndex==0 ? 'To Do List': 'Settings',
+                myProvider.currentIndex==0 ? AppLocalizations.of(context).toDoList: AppLocalizations.of(context).settings,
                 maxLines: 1,softWrap: false
                 )),
           );
@@ -147,7 +148,7 @@ class TaskItem extends StatelessWidget {
         backgroundColor: Color(0xFFFE4A49),
         foregroundColor: Colors.white,
         icon:Icons.delete,
-        label: 'Delete',
+        label: AppLocalizations.of(context).delete,
         borderRadius:BorderRadius.circular(20),
         autoClose: true,
 
@@ -157,7 +158,7 @@ class TaskItem extends StatelessWidget {
         backgroundColor: blueMainColor,
         foregroundColor: Colors.white,
         icon:Icons.edit,
-        label: 'Edite',
+        label: AppLocalizations.of(context).edite,
         borderRadius:BorderRadius.circular(20),
         autoClose: true,
 
@@ -229,7 +230,7 @@ class TaskItem extends StatelessWidget {
                       child: Icon(Icons.check,size: 30,color: whiteMainColor,),
                         ) : Padding(
                           padding: const EdgeInsets.all(8.0),
-                          child: Text('Done !!',style:TextStyle(color:GreenDoneColor,fontWeight:FontWeight.bold),),
+                          child: Text(AppLocalizations.of(context).done,style:TextStyle(color:GreenDoneColor,fontWeight:FontWeight.bold),),
                         ),
                     )
                   ],

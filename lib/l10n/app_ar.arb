@@ -1,0 +1,18 @@
+{
+    "toDoList": "قائمة المهام",
+    "settings": "الاعدادات",
+    "language": "اللغة",
+    "mode":"الوضع",
+    "addNewTask": "اضافة مهمة جديدة",
+    "selectTime": "اختار التاريخ",
+    "title": "المهمه",
+    "discribtion": "الوصف",
+    "delete": "مسح",
+    "edite": "تعديل",
+    "updateTask": "تعديل المهمة",
+    "addTask": "اضافة المهمة",
+    "done": "انتهت !!",
+    "noTasksToday": "لا يوجد مهام اليوم يا أخي .. zzZZZzzZ",
+    "loading": "تحميل .."
+
+}
