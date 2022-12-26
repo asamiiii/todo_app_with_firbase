@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 
 class TaskModel  {
   static String collectionName='tasks';

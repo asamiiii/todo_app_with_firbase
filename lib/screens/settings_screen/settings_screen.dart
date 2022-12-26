@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:todo_app_with_firbase/provider/appProvider.dart';
 import 'package:todo_app_with_firbase/screens/settings_screen/widgets.dart';
 
 
@@ -10,7 +8,6 @@ class SettingsScreen extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    var myProvider = Provider.of<AppProvider>(context);
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 40,vertical: 40),
       child: Column(
