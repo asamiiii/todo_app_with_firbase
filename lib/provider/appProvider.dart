@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo_app_with_firbase/local/cashe_helper.dart';
 
 class AppProvider extends ChangeNotifier{
   DateTime selectedDatee =DateTime.now();
@@ -6,6 +7,24 @@ class AppProvider extends ChangeNotifier{
   int currentIndex = 0;
   String dropValue = 'English';
   String dropModeValue = 'Dark';
+  bool? isDark = CasheHelper.getIsDarkValue('isDark');
+  //bool? isDarkCashed=CasheHelper.getIsDarkValue('isDark');
+
+  /*void changeMode(){
+    isDark =!isDark;
+    notifyListeners();
+  }*/
+
+  void chooseMode( String mode ){
+    if(mode == 'Dark')
+    {
+         isDark = true;
+    }
+    else
+    {
+         isDark = false;
+    }
+  }
  
 
   toggleNavBar(int index){

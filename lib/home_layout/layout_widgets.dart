@@ -29,7 +29,7 @@ class BottomNavBar extends StatelessWidget {
                myProvider.toggleNavBar(index);
             },
             currentIndex: 0,
-            backgroundColor: Colors.transparent,
+            backgroundColor: myProvider.isDark! ? Color(0xFF141922):Colors.transparent ,
             enableFeedback: true,
             elevation: 0,
             
@@ -169,7 +169,7 @@ class TaskItem extends StatelessWidget {
                 width: MediaQuery.of(context).size.width*0.90,
                 height: 100,
                 decoration: BoxDecoration(
-                  color: whiteMainColor,
+                  color: myProvider.isDark! ? Color(0xFF141922): whiteMainColor,
                   borderRadius: BorderRadius.circular(20)
                 ),
                 child: Row(
@@ -199,9 +199,9 @@ class TaskItem extends StatelessWidget {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
-                              Icon(Icons.alarm_on_sharp),
+                              Icon(Icons.alarm_on_sharp,color:myProvider.isDark! ? whiteMainColor:Colors.black,),
                               SizedBox(width: 5,),
-                              Expanded(child: Text(task.discribtion ?? '',overflow: TextOverflow.ellipsis,))
+                              Expanded(child: Text(task.discribtion ?? '',overflow: TextOverflow.ellipsis,style:Theme.of(context).textTheme.headline3,))
                             ],
                           )
                         ],

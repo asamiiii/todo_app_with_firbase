@@ -35,7 +35,7 @@ Future showBottomSheetTask(BuildContext context, var myProvider,
             Center(
                 child: Text(
               task == null ? 'Add new task' : 'Update task',
-              style: Theme.of(context).textTheme.headline6,
+              style: Theme.of(context).textTheme.headline1,
             )),
             Form(
                 key: formKey,
@@ -51,7 +51,13 @@ Future showBottomSheetTask(BuildContext context, var myProvider,
                       },
                       controller: taskTitle,
                       decoration: InputDecoration(
-                          hintText: 'title', labelText: 'title'),
+                          hintText: 'title',
+                          labelText: 'title',
+                          labelStyle:TextStyle(
+                            color: myProvider.isDark ?whiteMainColor: blackMainColor
+                          ),
+                          //labelStyle: 
+                          ),
                     ),
                     TextFormField(
                       validator: (taskDescription) {
@@ -66,6 +72,9 @@ Future showBottomSheetTask(BuildContext context, var myProvider,
                       decoration: InputDecoration(
                           hintText: 'discription',
                           labelText: 'discription',
+                          labelStyle:TextStyle(
+                            color:  myProvider.isDark ? whiteMainColor :blackMainColor
+                          ),
                           alignLabelWithHint: true),
                     ),
                   ],
@@ -75,7 +84,7 @@ Future showBottomSheetTask(BuildContext context, var myProvider,
             ),
             Text(
               'Select Time',
-              style: Theme.of(context).textTheme.headline6,
+              style: Theme.of(context).textTheme.headline1,
             ),
             InkWell(
               child: Center(

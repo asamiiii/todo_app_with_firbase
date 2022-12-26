@@ -17,11 +17,11 @@ class SettingsScreen extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('Language',),
+          Text('Language',style:Theme.of(context).textTheme.headline2,),
           SizedBox(height: 20,),
           DropLangMenu(),
           SizedBox(height: 20,),
-          Text('Mode',),
+          Text('Mode',style:Theme.of(context).textTheme.headline2),
           SizedBox(height: 20,),
           DropMenuMode(),
       

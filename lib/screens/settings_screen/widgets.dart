@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:provider/provider.dart';
+import 'package:todo_app_with_firbase/local/cashe_helper.dart';
 
 import '../../provider/appProvider.dart';
 
@@ -44,14 +45,15 @@ class DropMenuMode extends StatelessWidget {
             isDense: true,
             isExpanded: true,
             focusColor:Colors.transparent,
-        value: myProvider.dropModeValue,
+        value: myProvider.isDark! ? 'Dark':'Light',
         icon: const Icon(Icons.arrow_downward),
         //elevation: 16,
         style: const TextStyle(color: Colors.deepPurple),
         
         onChanged: (String? value) {
           myProvider.toggleDropMenuMode(value!);
-          //print(dropValue);
+          myProvider.chooseMode(value);
+          CasheHelper.putIsDarkValue('isDark', myProvider.isDark!);
         },
         items: [
           DropdownMenuItem(
